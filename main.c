@@ -1,42 +1,45 @@
 #include <stdio.h>
-#include <arithmetic_operations.h>
+#include "arithmetic_operations.h"
 
 int main()
 {   
-    char choice;
+    
     float a, b;
-
+    char choice;
     while(1)
     {  
-         
-        printf("Choose arithmetic operation | + - * / |\n Or q to quit\n");
+        choice = ' ';
+        printf("Choose arithmetic operation | + - * / |\nor q to quit\n");
         scanf("%c", &choice);
-
+      
+        getchar();
+        
         if(choice == 'q')
         {
-            printf("You have quit the program");
-            return;
+            printf("You have quit the program\n");
+            return 0;
         }
-
+        
         printf("Enter two numbers: ");
         scanf("%f %f", &a, &b);
-        
+
+        getchar();
         switch (choice)
         {
         case '+':
-            printf("Result: %f", add(a,b));
+            printf("Result: %f\n", add(a,b));
             break;
         case '-':
-            printf("Result: %f", subtract(a, b));
+            printf("Result: %.f\n", subtract(a, b));
             break;
         case '*':
-            printf("Result: %f", multiply(a, b));
+            printf("Result: %f\n", multiply(a, b));
             break;
         case '/':
-            printf("Result: %f", divide(a, b));
+            printf("Result: %f\n", divide(a, b));
             break;
         default:
-            printf("Invalid choice. Please, enter | + - * / | to choose arithmetic operation or q to quit\n");
+            printf("Invalid choice\n");
         }
     }
     return 0;
